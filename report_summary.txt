@@ -1,0 +1,58 @@
+
+# Wind Speed Prediction LSTM + SHAP Report
+
+### Model Summary
+
+- **Model Type:** LSTM Encoder-Decoder
+- **Encoder Steps (n_past):** 24
+- **Decoder Steps (n_future):** 7
+- **Number of Features (n_features):** 8
+- **Latent Dimension:** 128
+
+### Training Performance
+
+- **Epochs:** 10
+- **Final Training Loss:** 0.0245
+- **Final Validation Loss:** 0.0204
+
+### Evaluation Metrics (WIND prediction)
+
+- **RMSE per horizon:**
+  - Horizon 1: 4.32
+  - Horizon 2: 4.60
+  - Horizon 3: 4.71
+  - Horizon 4: 4.79
+  - Horizon 5: 4.73
+  - Horizon 6: 4.79
+  - Horizon 7: 4.77
+- **MAE per horizon:**
+  - Horizon 1: 3.43
+  - Horizon 2: 3.62
+  - Horizon 3: 3.70
+  - Horizon 4: 3.76
+  - Horizon 5: 3.74
+  - Horizon 6: 3.78
+  - Horizon 7: 3.77
+- **MAPE per horizon:**
+  - Horizon 1: 57.60%
+  - Horizon 2: 58.85%
+  - Horizon 3: 59.01%
+  - Horizon 4: 59.88%
+  - Horizon 5: 63.14%
+  - Horizon 6: 63.02%
+  - Horizon 7: 63.64%
+
+### SHAP Feature Importance (for first prediction horizon)
+
+Top features by Mean Absolute SHAP Value (KernelExplainer):
+  - WIND: 0.0018
+  - IND: 0.0003
+  - IND.2: 0.0001
+  - T.MAX: 0.0001
+  - T.MIN.G: 0.0001
+
+### Visualizations
+
+- Training & Validation Loss Plot: `training_validation_loss.png`
+- Predicted vs Actual for first 3 horizons: `pred_vs_actual_h1.png`, `pred_vs_actual_h2.png`, `pred_vs_actual_h3.png`
+- SHAP Feature Importance Plot: `shap_feature_importance_kernel.png`
